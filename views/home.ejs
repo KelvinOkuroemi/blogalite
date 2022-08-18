@@ -1,0 +1,16 @@
+<%- include("partials/header.ejs") -%> 
+<h1>Home</h1>
+<p><%= home%> </p>
+
+<% posts.forEach((post)=>{ %> 
+     <h1><%= post.title %> </h1> 
+     <% function truncate(input){ %> 
+          <%  if(input.length > 100){%>  
+          <% return input.substring(0,100) + "..." %>     
+          <%  }%>
+          <%  return input;%> 
+          <% } %>  
+     <p><%= truncate(post.content)%><a href="/posts/<%= post._id%> ">Read more</a> </p> 
+<%}) %> 
+
+<%- include("partials/footer.ejs") -%> 
