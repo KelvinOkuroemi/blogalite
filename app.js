@@ -77,11 +77,11 @@ app.post("/compose",(req,res)=>{
 })
 
 // Listen 
-app.listen(process.env.PORT);
-// let port = process.env.PORT;
-// if (port == null || port == "") {
-//   port = 3000;
-// }
-// app.listen(port, ()=> {
-//   console.log("Server started on host");
-// });
+// app.listen(process.env.PORT);
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+app.listen(port, ()=> {
+  console.log("Server started on host");
+});
